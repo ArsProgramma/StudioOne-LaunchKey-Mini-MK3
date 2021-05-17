@@ -492,9 +492,11 @@ function Modes( hostComponent, bankCount )
     /**
     * Helper to ensure index is assigned to mode object
     **/
-    this._getModeByIndex = function( modeArr, i )
-    {
-        if( ! modeArr[i].index )
+    this._getModeByIndex = function (modeArr, i) {
+        if (!modeArr[i]) {
+            modeArr[i] = {};
+        }
+        if (!modeArr[i].index)
             modeArr[i].index = i;
         return modeArr[i];
     }
